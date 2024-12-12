@@ -1,12 +1,8 @@
 ﻿using System.Diagnostics;
-using System.Reflection;
+using AdventOfCode.Helpers;
 using AdventOfCode.Y24.D1;
 
-var executablePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new DirectoryNotFoundException("Unable to find directory of executable");
-var inputPath = Path.Combine(executablePath, @"Y24/D1/Input.txt");
-
-var lines = File.ReadAllLines(inputPath).ToList();
-
+var lines = InputReader.ReadInput(@"Y24/D1/Input.txt");
 var input = new Input();
 
 lines.ForEach(line =>
